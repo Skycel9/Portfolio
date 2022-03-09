@@ -1,16 +1,28 @@
 /*
-Import components
+@Use
 ----------------------
 */
+@use "sass:map";
+
+/*
+Utilities
+----------------------
+*/
+@import "./utils/colors";
+/*
+Components
+----------------------
+*/
+@import "./components/global.scss";
 @import "./components/navbar.scss";
 
 /*
-Import index
+Index
 ----------------------
 */
 @import "./index/banner.scss";
 
 /*
-Import contact
+Contact
 ----------------------
 */

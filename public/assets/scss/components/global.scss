@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+	font-family: "Nunito", sans-serif;
+}
+body {
+	width: 100vw;
+	overflow-x: hidden;
+	background: map-get($colors, bg);
+}
+a {
+	text-decoration: none;
+	//color: var(--color-light);
+	border-radius: 20px;
+
+	&:focus {
+		//outline: solid var(--second-color);
+		color: inherit;
+	}
+}
+span.nobr {
+	white-space: nowrap;
+}
