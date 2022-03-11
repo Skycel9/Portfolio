@@ -17,8 +17,8 @@ a {
 	//color: var(--color-light);
 	border-radius: 20px;
 
-	&:focus {
-		//outline: solid var(--second-color);
+	&:-moz-focusring {
+		outline: solid var(--second-color);
 		color: inherit;
 	}
 }
