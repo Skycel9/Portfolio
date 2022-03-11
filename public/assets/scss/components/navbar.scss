@@ -122,6 +122,7 @@ nav.navbar {
 		justify-content: space-evenly;
 		align-items: center;
 		margin-right: 20px;
+		border-radius: 5px;
 
 		& .bar {
 			width: 70%;
@@ -248,22 +249,26 @@ nav.navbar {
 		.toggle-btn {
 			display: flex;
 			visibility: visible;
+			position: relative;
 
-			&.active {
-				position: relative;
+			.bar {
+				transition: transform .2s ease-in-out, opacity .2s .1s ease-in-out;
 			}
+
 			&.active .bar {
 				position: absolute;
-				transition: transform 0.5s ease-in-out;
+				transition: transform .2s ease-in-out;
 			}
-			&.active .bar-1 {
-				transform: rotate(45deg);
+			&.active .bar-1{
+				position: relative;
+				opacity: 0;
+				transition: opacity .2s ease-in-out;
 			}
 			&.active .bar-2 {
-				transform: rotate(-45deg);
+				transform: rotate(45deg);
 			}
 			&.active .bar-3 {
-				opacity: 0;
+				transform: rotate(-45deg);
 			}
 		}
 	}
