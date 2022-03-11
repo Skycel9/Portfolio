@@ -9,9 +9,11 @@ toggleBtn.addEventListener("click", async (e) => {
 	if (!toggleBtn.className.includes("active")) {
 		toggleBtn.classList.add("active");
 		links.classList.add("active");
+		navbar.classList.add("active");
 	} else {
 		toggleBtn.classList.remove("active");
 		links.classList.remove("active");
+		navbar.classList.remove("active");
 	}
 });
 

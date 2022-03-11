@@ -1,7 +1,7 @@
 nav.navbar {
 	position: fixed;
 	top: 0;
-	width: 100vw;
+	width: calc(100vw - 40px);
 	height: 10vh;
 	min-height: 50px;
 	background: map-get($colors, nav-bg);
@@ -9,10 +9,12 @@ nav.navbar {
 	justify-content: space-around;
 	align-items: center;
 	color: map-get($colors, text);
-	padding: 0 20;
+	padding: 0 20px;
 	box-shadow: 28px 0 64px rgba(0, 0, 0, 0.1);
 	z-index: 999;
 	transition: background 0.5s ease-in-out, height 0.5s ease-in-out;
+	border-radius: 20px;
+	margin: 20px;
 
 	&.scrolled {
 		height: 50px;
@@ -70,7 +72,8 @@ nav.navbar {
 		font-size: 2.3rem;
 		height: 100%;
 		list-style: none;
-		z-index: 999;
+		z-index: 990;
+		border-radius: 0 20px 20px 20px;
 
 		.item {
 			margin: 0 2rem;
@@ -92,7 +95,7 @@ nav.navbar {
 			color: map-get($colors, bg);
 		}
 		.item a .icon {
-			margin: 0 10px;
+			margin: 0 10px 0 0;
 			width: 2.4rem;
 			height: 2.4rem;
 			transition: all 0.5s ease-in-out;
@@ -175,11 +178,11 @@ nav.navbar {
 			font-size: 2.3rem;
 		}
 
-		.item {
-			margin: 0;
+		.links .item {
+			margin: 0 1rem;
 			font-size: 1.5rem;
 		}
-		.item a .icon {
+		.links .item a .icon {
 			width: 1.8rem;
 			height: 1.8rem;
 		}
@@ -195,7 +198,94 @@ nav.navbar {
 			}
 		}
 	}
-	@include media(850) {
-    
-  };
+	@include media(900) {
+		& {
+			justify-content: space-between;
+			margin: 10px;
+			width: calc(100vw - 20px);
+			transition: border-radius 0.5s ease-in-out;
+			transition-delay: 0.4s;
+		}
+		&.active {
+			border-radius: 20px 20px 0 20px;
+			transition: none;
+		}
+		.logo .logo-text {
+			display: none;
+			visibility: hidden;
+		}
+		.logo .logo-img {
+			display: block;
+			visibility: visible;
+		}
+
+		.links {
+			flex-direction: column;
+			visibility: hidden;
+			position: absolute;
+			height: 0;
+			overflow-y: hidden;
+			right: 0;
+			top: 100%;
+			background: map-get($colors, nav-bg);
+			border-radius: 0 0 20px 20px;
+			transition: all 0.5s ease-in-out;
+
+			&.active {
+				visibility: visible;
+				height: 200px;
+			}
+		}
+
+		&.scrolled .links .item a .icon {
+			width: 1.8rem;
+			height: 1.8rem;
+		}
+		.item {
+			padding: 2rem;
+		}
+
+		.toggle-btn {
+			display: flex;
+			visibility: visible;
+
+			&.active {
+				position: relative;
+			}
+			&.active .bar {
+				position: absolute;
+				transition: transform 0.5s ease-in-out;
+			}
+			&.active .bar-1 {
+				transform: rotate(45deg);
+			}
+			&.active .bar-2 {
+				transform: rotate(-45deg);
+			}
+			&.active .bar-3 {
+				opacity: 0;
+			}
+		}
+	}
+
+	@include media(375) {
+		& {
+			margin: 5px;
+			width: calc(100vw - 10px);
+		}
+		.links.active {
+			height: 250px;
+		}
+		.links .item.button {
+			display: block;
+			margin: 2rem;
+		}
+
+		.button {
+			display: none;
+		}
+		.toggle-btn {
+			margin: 0;
+		}
+	}
 }
