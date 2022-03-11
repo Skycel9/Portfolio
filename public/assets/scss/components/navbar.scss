@@ -252,12 +252,12 @@ nav.navbar {
 			position: relative;
 
 			.bar {
-				transition: transform .2s ease-in-out, opacity .2s .1s ease-in-out;
+				transition: transform .3s ease-in-out, opacity .2s .1s ease-in-out;
 			}
 
 			&.active .bar {
 				position: absolute;
-				transition: transform .2s ease-in-out;
+				transition: transform .3s ease-in-out;
 			}
 			&.active .bar-1{
 				position: relative;
