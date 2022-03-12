@@ -44,11 +44,12 @@ header {
   height: 7rem;
   margin: 0;
   padding: 0;
-  border: none; }
+  border: none;
+  position: fixed;
+  top: 0; }
 
 nav.navbar {
-  position: fixed;
-  top: 0;
+  position: relative;
   width: calc(100% - 40px);
   padding: 0 20px;
   margin: 20px;
@@ -220,6 +221,7 @@ nav.navbar {
       visibility: hidden;
       position: absolute;
       height: 0;
+      width: 155px;
       overflow-y: hidden;
       right: 0;
       top: 100%;
@@ -229,8 +231,16 @@ nav.navbar {
       nav.navbar .links.active {
         visibility: visible;
         height: 25rem; }
+      nav.navbar .links.active .item {
+        font-size: 1.5rem; }
+      nav.navbar .links.active .item a .icon {
+        height: 1.8rem; }
       nav.navbar .links .item {
-        padding: 1.5rem; }
+        font-size: 0;
+        padding: 1.5rem;
+        transition: font-size .5s ease-in-out; }
+      nav.navbar .links .item a .icon {
+        height: 0; }
       nav.navbar .links .item a p {
         width: fit-content;
         height: fit-content;
