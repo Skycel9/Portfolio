@@ -40,16 +40,12 @@ main {
   margin: 150px 0; }
 
 header {
-  width: 100vw;
-  height: 7rem;
-  margin: 0;
-  padding: 0;
-  border: none;
-  position: fixed;
-  top: 0; }
+  width: calc(100% - 40px); }
 
 nav.navbar {
   position: fixed;
+  top: 0;
+  left: 0;
   width: calc(100% - 40px);
   padding: 0 20px;
   margin: 20px;
