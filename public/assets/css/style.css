@@ -59,7 +59,7 @@ nav.navbar {
   align-items: center;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
   z-index: 999;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   color: #DDDDDD; }
   nav.navbar.scrolled {
     width: 100%;
@@ -70,14 +70,14 @@ nav.navbar {
     nav.navbar.scrolled .links .item a p {
       opacity: 0;
       max-width: 0;
-      transition: opacity .4s ease-in-out, max-width .4s ease-in-out; }
+      transition: opacity 0.4s ease-in-out, max-width 0.4s ease-in-out; }
   nav.navbar .logo {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    transition: all .5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
     nav.navbar .logo .logo-img {
       height: 100%;
       margin-left: 1rem;
@@ -111,11 +111,11 @@ nav.navbar {
       margin: 0 10px 0 0;
       width: 2.5rem;
       height: 2.5rem;
-      transition: all .5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
     nav.navbar .links .item a p {
       opacity: 1;
       max-width: 150px;
-      transition: opacity .2s .3s ease-in-out, max-width .4s ease-in-out; }
+      transition: opacity 0.2s 0.3s ease-in-out, max-width 0.4s ease-in-out; }
   nav.navbar .right-container {
     height: 100%;
     display: flex;
@@ -136,7 +136,8 @@ nav.navbar {
       width: 70%;
       height: 2px;
       background: #DDDDDD; }
-  nav.navbar .button, nav.navbar .links .button {
+  nav.navbar .button,
+  nav.navbar .links .button {
     height: fit-content;
     display: flex;
     justify-content: center;
@@ -146,8 +147,9 @@ nav.navbar {
     padding: 1rem 2rem;
     background: #FA784F;
     border-radius: 1rem;
-    transition: all .5s ease-in-out; }
-    nav.navbar .button .icon, nav.navbar .links .button .icon {
+    transition: all 0.5s ease-in-out; }
+    nav.navbar .button .icon,
+    nav.navbar .links .button .icon {
       width: 2.4rem;
       height: 2.4rem;
       margin: 0 10px 0 0; }
@@ -158,9 +160,11 @@ nav.navbar {
     nav.navbar .links .item a .icon {
       width: 2.2rem;
       height: 2.2rem; }
-    nav.navbar .button, nav.navbar .links .button {
+    nav.navbar .button,
+    nav.navbar .links .button {
       font-size: 1.8rem; }
-      nav.navbar .button .icon, nav.navbar .links .button .icon {
+      nav.navbar .button .icon,
+      nav.navbar .links .button .icon {
         width: 2rem;
         height: 2rem; } }
   @media screen and (max-width: 1100px) {
@@ -168,31 +172,33 @@ nav.navbar {
       font-size: 2.5rem; }
     nav.navbar .links .item {
       font-size: 1.5rem;
-      margin: 0 .4rem;
+      margin: 0 0.4rem;
       padding: 1rem; }
     nav.navbar .links .item a .icon {
       width: 1.8rem;
       height: 1.8rem; }
-    nav.navbar .button, nav.navbar .links .button {
+    nav.navbar .button,
+    nav.navbar .links .button {
       font-size: 1.5rem;
-      padding: .7rem 1.5rem; }
-      nav.navbar .button .icon, nav.navbar .links .button .icon {
+      padding: 0.7rem 1.5rem; }
+      nav.navbar .button .icon,
+      nav.navbar .links .button .icon {
         width: 1.8rem;
         height: 1.8rem; } }
   @media screen and (max-width: 900px) {
     nav.navbar {
       justify-content: space-between;
-      transition: all .5s ease-in-out, border-radius .5s .3s ease-in-out;
+      transition: all 0.5s ease-in-out, border-radius 0.5s 0.3s ease-in-out;
       border-radius: 10px; }
     nav.navbar.active {
       border-radius: 20px 20px 0 20px;
-      transition: all .5s ease-in-out, border-radius .0s; }
+      transition: all 0.5s ease-in-out, border-radius 0s; }
     nav.navbar.scrolled {
       border-radius: 0 0 15px 15px; }
-    nav.navbar.scrolled .links.active {
+    nav.navbar.scrolled .links {
       background: rgba(17, 17, 17, 0.98);
       backdrop-filter: blur(5px); }
-      nav.navbar.scrolled .links.active .item a p {
+      nav.navbar.scrolled .links .item a p {
         max-width: fit-content;
         opacity: 1; }
     nav.navbar .logo .logo-text {
@@ -213,7 +219,7 @@ nav.navbar {
       top: 100%;
       background: #171717;
       border-radius: 0 0 20px 20px;
-      transition: all .5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
       nav.navbar .links.active {
         visibility: visible;
         height: 25rem; }
@@ -229,14 +235,14 @@ nav.navbar {
       position: relative;
       opacity: 1; }
       nav.navbar .toggle-btn .bar {
-        transition: transform .3s ease-in-out, opacity .2s .1s ease-in-out; }
+        transition: transform 0.3s ease-in-out, opacity 0.2s 0.1s ease-in-out; }
       nav.navbar .toggle-btn.active .bar {
         position: absolute;
-        transition: transform .3s ease-in-out; }
+        transition: transform 0.3s ease-in-out; }
       nav.navbar .toggle-btn.active .bar-1 {
         position: relative;
         opacity: 0;
-        transition: opacity .2s ease-in-out; }
+        transition: opacity 0.2s ease-in-out; }
       nav.navbar .toggle-btn.active .bar-2 {
         transform: rotate(-45deg); }
       nav.navbar .toggle-btn.active .bar-3 {
@@ -254,7 +260,7 @@ nav.navbar {
       display: block;
       margin: 1.5rem;
       font-size: 1.5rem;
-      padding: .7rem 1.5rem;
+      padding: 0.7rem 1.5rem;
       visibility: visible;
       opacity: 1; }
       nav.navbar .links .item.button a {
