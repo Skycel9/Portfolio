@@ -9,6 +9,7 @@ html {
 }
 body {
 	width: 100vw;
+	height: 150vh;
 	overflow-x: hidden;
 	background: map-get($colors, bg);
 }
@@ -23,4 +24,7 @@ a {
 }
 span.nobr {
 	white-space: nowrap;
+}
+main {
+	margin: 150px 0;
 }

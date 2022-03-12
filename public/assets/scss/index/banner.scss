@@ -1,0 +1,24 @@
+header.banner {
+  color: map-get($colors, text);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .title {
+    font-size: 5rem;
+    font-weight: 600;
+
+    span {
+      color: map-get($colors, main);
+    }
+    span.nobr {
+      color: map-get($colors, text);
+    }
+    sup .icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    
+  }
+}
