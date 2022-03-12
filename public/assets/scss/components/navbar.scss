@@ -4,10 +4,11 @@ header {
 	margin: 0;
 	padding: 0;
 	border: none;
+  position: fixed;
+  top: 0;
 }
 nav.navbar {
-	position: fixed;
-	top: 0;
+  position: relative;
 	width: calc(100% - 40px);
 	padding: 0 20px;
 	margin: 20px;
@@ -230,6 +231,7 @@ nav.navbar {
 			visibility: hidden;
 			position: absolute;
 			height: 0;
+      width: 155px;
 			overflow-y: hidden;
 			right: 0;
 			top: 100%;
@@ -241,9 +243,20 @@ nav.navbar {
 				visibility: visible;
 				height: 25rem;
 			}
+      &.active .item {
+        font-size: 1.5rem
+      }
+      &.active .item a .icon {
+        height: 1.8rem
+      }
 			.item {
+        font-size: 0;
 				padding: 1.5rem;
+        transition: font-size .5s ease-in-out;
 			}
+      .item a .icon {
+        height: 0;
+      }
 			.item a p {
 				width: fit-content;
 				height: fit-content;
