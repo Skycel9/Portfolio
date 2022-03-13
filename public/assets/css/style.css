@@ -217,9 +217,10 @@ nav.navbar {
     nav.navbar {
       justify-content: space-between;
       transition: all 0.5s ease-in-out, border-radius 0.5s 0.3s ease-in-out;
-      border-radius: 10px; }
+      border-radius: 10px;
+      margin: 20px; }
     nav.navbar.active {
-      border-radius: 20px 20px 0 20px;
+      border-radius: 10px 10px 0 10px;
       transition: all 0.5s ease-in-out, border-radius 0s; }
     nav.navbar.scrolled {
       border-radius: 0 0 15px 15px; }
@@ -243,7 +244,7 @@ nav.navbar {
       position: absolute;
       height: 0;
       width: 155px;
-      overflow-y: hidden;
+      overflow: hidden;
       right: 0;
       top: 100%;
       background: #171717;
@@ -266,6 +267,8 @@ nav.navbar {
         width: fit-content;
         height: fit-content;
         visibility: visible; }
+    nav.navbar.scrolled.active {
+      border-radius: 0 0 0 20px; }
     nav.navbar .toggle-btn {
       display: flex;
       visibility: visible;
