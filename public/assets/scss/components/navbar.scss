@@ -1,10 +1,11 @@
 header {
 	width: calc(100% - 40px);
+	user-select: none;
 }
 nav.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: calc(100% - 100px);
 	padding: 0 20px;
 	margin: 50px;
@@ -26,10 +27,10 @@ nav.navbar {
 		background: transparentize($color: map-get($colors, bg), $amount: 0.1);
 		backdrop-filter: blur(5px);
 
-    .links .item a .icon {
-      width: 2rem;
-      height: 2rem;
-    }
+		.links .item a .icon {
+			width: 2rem;
+			height: 2rem;
+		}
 		.links .item a p {
 			opacity: 0;
 			max-width: 0;
@@ -68,15 +69,19 @@ nav.navbar {
 
 		.item {
 			margin: 0 2rem;
-			padding: 1.5rem;
 			cursor: pointer;
+			position: relative;
+			transform: none;
+
 		}
 		.item a {
 			display: flex;
+			padding: 1.5rem;
 			justify-content: center;
 			align-items: center;
 			color: map-get($colors, text);
 			height: 100%;
+			transition: transform .3s ease-in-out, 0.3s ease-in-out;
 		}
 		.item.button {
 			display: none;
@@ -86,12 +91,18 @@ nav.navbar {
 			margin: 0 5px 0 0;
 			width: 2.8em;
 			height: 2.8rem;
-			transition: all 0.5s ease-in-out;
+			transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
 		}
 		.item a p {
 			opacity: 1;
 			max-width: 150px;
 			transition: opacity 0.2s 0.3s ease-in-out, max-width 0.4s ease-in-out;
+		}
+
+		.item a:hover,
+		.item:focus a,.item:target {
+			transform: scale(1.2) rotate(-2deg);
+			color: lighten(map-get($colors, second), 10);
 		}
 	}
 
@@ -130,17 +141,23 @@ nav.navbar {
 		padding: 1rem 2rem;
 		background: map-get($colors, main);
 		border-radius: 1rem;
-		transition: all 0.5s ease-in-out;
+		box-shadow: none;
+		transition: all 0.5s ease-in-out, box-shadow .3s ease-in-out;
 
 		.icon {
 			width: 2.8rem;
 			height: 2.8rem;
 			margin: 0 15px 0 0;
 		}
+
+		&:hover {
+			background: darken(map-get($colors, main), 5);
+			box-shadow: 5px 5px transparentize(map-get($colors, main), 0.8);
+		}
 	}
 
 	//Media queries
-	@include media (1800) {
+	@include media(1800) {
 		& {
 			margin: 30px;
 			width: calc(100% - 60px);
@@ -162,7 +179,7 @@ nav.navbar {
 		.button,
 		.links .button {
 			font-size: 2rem;
-			padding: .7rem 1.5rem;
+			padding: 0.7rem 1.5rem;
 
 			.icon {
 				width: 2.3rem;
@@ -172,9 +189,9 @@ nav.navbar {
 		}
 	}
 	@include media(1400) {
-    .logo {
-      font-size: 2.3rem;
-    }
+		.logo {
+			font-size: 2.3rem;
+		}
 		.links .item {
 			font-size: 1.5rem;
 			margin: 0 1rem;
@@ -202,6 +219,8 @@ nav.navbar {
 		.links .item {
 			font-size: 1.5rem;
 			margin: 0 0.4rem;
+		}
+		.links .item a {
 			padding: 1rem;
 		}
 		.links .item a .icon {
@@ -259,7 +278,7 @@ nav.navbar {
 			visibility: hidden;
 			position: absolute;
 			height: 0;
-      width: 155px;
+			width: 155px;
 			overflow: hidden;
 			right: 0;
 			top: 100%;
@@ -271,20 +290,22 @@ nav.navbar {
 				visibility: visible;
 				height: 25rem;
 			}
-      &.active .item {
-        font-size: 1.5rem
-      }
-      &.active .item a .icon {
-        height: 1.8rem
-      }
-			.item {
-        font-size: 0;
-				padding: 1.5rem;
-        transition: font-size .5s ease-in-out;
+			&.active .item {
+				font-size: 1.5rem;
 			}
-      .item a .icon {
-        height: 0;
-      }
+			&.active .item a .icon {
+				height: 1.8rem;
+			}
+			.item {
+				font-size: 0;
+				transition: font-size 0.5s ease-in-out;
+			}
+			.item a {
+				padding: 1.5rem;
+			}
+			.item a .icon {
+				height: 0;
+			}
 			.item a p {
 				width: fit-content;
 				height: fit-content;
