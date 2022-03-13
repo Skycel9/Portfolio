@@ -8,6 +8,7 @@ header.banner {
   .title {
     font-size: 5rem;
     font-weight: 600;
+    margin: 50px 0 ;
 
     span {
       color: map-get($colors, main);
@@ -16,9 +17,88 @@ header.banner {
       color: map-get($colors, text);
     }
     sup .icon {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 3rem;
+      height: 3rem;
     }
-    
+
+    .cursor {
+      height: 5rem;
+      width: 4px;
+      background: map-get($colors, text);
+      display: inline-block;
+      margin-left: 10px;
+      border-radius: 5px;
+      animation: linear cursor-blink 1.5s infinite;
+    }
+  }
+  .cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 100px 0;
+
+    .button {
+      font-size: 3.5rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: map-get($colors, bg);
+      padding: 2rem 4rem;
+      border-radius: 50px;
+      border: 5px solid map-get($colors, main);
+    }
+    .button .icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: 0 20px 0 0;
+    }
+    .button.primary {
+      background: map-get($colors, main);
+      margin-right: 30px;
+    }
+    .button.secondary {
+      color: map-get($colors, text);
+    }
+  }
+  .text {
+    color: map-get($colors, text-60);
+    font-size: 3rem;
+    margin: 40px 0 ;
+    width: fit-content;
+
+
+    span {
+      margin: 0;
+      transition: margin .5s ease-in-out;
+    }
+    &:hover span {
+      margin-left: 20px;
+    }
+  }
+  .right img {
+    width: 25vw;
+  }
+}
+
+//Cursor keyframes
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
