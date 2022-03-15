@@ -10,6 +10,7 @@ html {
 body {
 	width: 100%;
 	background: map-get($colors, bg);
+	height: 150vh;
 }
 a {
 	text-decoration: none;
@@ -24,12 +25,19 @@ span.nobr {
 	white-space: nowrap;
 }
 main {
-	margin: 250px 10%;
+	padding: 350px 10%;
+	display: flex;
+	justify-content: center;
+	transition: padding .5s ease-in-out;
 
-	@include media(1600) {
-		& {
-			margin: 150px 10%;
-		}
+	@include media(2000) {
+		padding: 250px 10%;
+	}
+	@include media(1800) {
+		padding: 175px 10%;
+	}
+	@include media (1100) {
+		padding: 100px 0
 	}
 }
 
