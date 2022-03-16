@@ -9,9 +9,9 @@ nav.navbar {
 	position: fixed;
 	top: 0;
 	padding: 0 20px;
-	margin: 50px;
+	margin: 30px;
 	border-radius: 15px;
-	height: 10rem;
+	height: 7rem;
 	display: flex;
 	justify-content: space-around;
 	background: map-get($colors, nav-bg);
@@ -31,8 +31,8 @@ nav.navbar {
 		backdrop-filter: blur(5px);
 
 		.links .item a .icon {
-			width: 2.5rem;
-			height: 2.5rem;
+			width: 2.2rem;
+			height: 2.2rem;
 			margin: 0 20px;
 		}
 		.links .item a p {
@@ -101,7 +101,8 @@ nav.navbar {
 			margin: 0 5px 0 0;
 			width: 2.8em;
 			height: 2.8rem;
-			transition: width 0.5s ease-in-out, height 0.5s ease-in-out, margin .5s ease-in-out;
+			transition: width 0.5s ease-in-out, height 0.5s ease-in-out,
+				margin 0.5s ease-in-out;
 		}
 		.item a p {
 			opacity: 1;
@@ -168,11 +169,33 @@ nav.navbar {
 	}
 
 	//Media queries
+	@include media (2000) {
+		.links {
+			font-size: 1.6rem;
+		}
+		.links .item a .icon {
+			width: 1.8rem;
+			height: 1.8rem;
+			margin: 0 10px 0 0;
+		}
+
+		.button,
+		.links .button {
+			font-size: 1.6rem;
+			padding: 0.7rem 1.5rem;
+
+			.icon {
+				width: 1.8rem;
+				height: 1.8rem;
+				margin: 0 10px 0 0;
+			}
+		}
+	}
 	@include media(1800) {
 		& {
-			margin: 30px;
+			margin: 15px;
 			width: calc(100% - 60px);
-			height: 7rem;
+			height: 5rem;
 		}
 		&.scrolled .links .item a .icon {
 			margin: 0 5px;
@@ -180,44 +203,26 @@ nav.navbar {
 		.logo {
 			font-size: 2.8rem;
 		}
-
-		.links {
-			font-size: 2rem;
-		}
-		.links .item a .icon {
-			width: 2.3rem;
-			height: 2.3rem;
-			margin: 0 10px 0 0;
-		}
-
-		.button,
-		.links .button {
-			font-size: 2rem;
-			padding: 0.7rem 1.5rem;
-
-			.icon {
-				width: 2.3rem;
-				height: 2.3rem;
-				margin: 0 10px 0 0;
-			}
-		}
 	}
 	@include media(1400) {
 		.logo {
 			font-size: 2.3rem;
 		}
+		.links {
+			font-size: 1.4rem;;
+		}
 		.links .item {
-			font-size: 1.5rem;
 			margin: 0 1rem;
 		}
-		.links .item a .icon, &.scrolled .links .item a .icon {
-			width: 1.8rem;
-			height: 1.8rem;
+		.links .item a .icon,
+		&.scrolled .links .item a .icon {
+			width: 1.5rem;
+			height: 1.5rem;
 		}
 
 		.button,
 		.links .button {
-			font-size: 1.5rem;
+			font-size: 1.6rem;
 
 			.icon {
 				width: 1.8rem;
@@ -365,7 +370,7 @@ nav.navbar {
 	}
 	@include media(375) {
 		& {
-			margin: 1rem;
+			margin: 5px;
 			width: calc(100% - 2rem);
 		}
 		.links.active {
