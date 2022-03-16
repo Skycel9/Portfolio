@@ -10,6 +10,9 @@ header.banner {
 	.right {
 		margin: 30px;
 	}
+	.right {
+		position: relative;
+	}
 	.title {
 		font-size: 4rem;
 		font-weight: 600;
@@ -38,6 +41,31 @@ header.banner {
 			animation: linear cursor-blink 1.2s infinite;
 		}
 	}
+	.def-modal {
+		position: absolute;
+		display: none;
+		top: 0;
+		left: 0;
+		max-width: 200px;
+		min-width: 150px;
+		padding: 15px;
+		background: lighten(map-get($colors, nav-bg), 10);
+		color: map-get($colors, text);
+		border-radius: 10px;
+		z-index: 950;
+
+		&.active {
+			display: block;
+			transform: translate(10px, 10px);
+		}
+
+		.title {
+			margin: 15px 30px;
+		}
+		.paragraph {
+			font-size: 1.5rem;
+		}
+	}
 	.cta-container {
 		display: flex;
 		align-items: center;
@@ -56,7 +84,14 @@ header.banner {
 			padding: 1.5rem 3rem;
 			border-radius: 50px;
 			border: 5px solid map-get($colors, main);
-			transition: all 0.5s ease-in-out;
+			transition-delay: 0s;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+				box-shadow: 5px 5px transparentize(map-get($colors, main), 0.8);
+			}
+
 		}
 		.button .icon {
 			width: 3.2rem;
@@ -88,10 +123,24 @@ header.banner {
 		}
 	}
 	.right img {
+		position: relative;
 		width: 15vw;
 		max-width: 650px;
 		min-width: 230px;
 		transition: all 0.5s ease-in-out;
+	}
+	.right::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: transparentize(map-get($colors, second), .9);
+		filter: blur(150px);
+		transition: all .3s ease-in-out;
+	}
+	.right:hover::before {
+		background: transparentize(map-get($colors, second), .8);
 	}
 
 	// Media queries
@@ -164,7 +213,7 @@ header.banner {
 		}
 
 		.text {
-			font-size: 1.7rem;
+			font-size: 1.8rem;
 			margin: 20px 0;
 		}
 	}
@@ -197,7 +246,7 @@ header.banner {
 		}
 
 		.text {
-			font-size: 1.3rem;
+			font-size: 1.5rem;
 		}
 	}
 	@include media(1100) {
