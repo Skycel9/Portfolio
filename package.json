@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/Skycel9/Portfolio/issues"
   },
-  "homepage": "https://github.com/Skycel9/Portfolio"
+  "homepage": "https://github.com/Skycel9/Portfolio",
+  "dependencies": {}
 }

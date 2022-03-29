@@ -1,27 +1,28 @@
-/*
-@Use
-----------------------
-*/
-@use "sass:map";
-@import "./utils/medias";
+// @Use
+// ----------------------
 
-/*
-Utilities
-----------------------
-*/
-@import "./utils/colors";
+@import './utils/medias';
+
+// Utilities
+// ---------------------
+
+@import './utils/colors';
+
 /*
 Components
 ----------------------
 */
-@import "./components/global.scss";
-@import "./components/navbar.scss";
+
+@import './components/global.scss';
+@import './components/navbar.scss';
 
 /*
 Index
 ----------------------
 */
-@import "./index/banner.scss";
+
+@import './index/banner.scss';
+@import './index/about.scss';
 
 /*
 Contact
