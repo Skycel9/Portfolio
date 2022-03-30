@@ -13,21 +13,21 @@
 class Carousel {
   /**
    * @param {HTMLElement} element
-   * @param {String} styleLink - Path to access to css file for carousel from page
+   * @param {String} styleLink - Path to access to css file for the carousel from page
    * @param {Object} [options] - Object contain all settings for carousel
-   * @param {Number} [options.slidesToScroll=1] - Number of items scrolled when move the carousel
-   * @param {Number} [options.slidesVisible=1] - Number of items visible in carousel
-   * @param {Boolean} [options.navigation=true] - Activate/Desactivate buttons for navigations
+   * @param {Number} [options.slidesToScroll=1] - Amount items scrolled when move the carousel
+   * @param {Number} [options.slidesVisible=1] - Amount items visible in carousel
+   * @param {Boolean} [options.navigation=true] - Activate/Deactivate buttons for navigations
    * @param {Number} [options.index=0] - The index of first element showing in carousel
-   * @param {Boolean} [options.loop=false] - Activate/Desactivate the loop mode for carousel
-   * @param {Boolean} [options.pagination=true] - Activate/Desactivate the pagination for carousel
-   * @param {Object} [options.style] - Object contain class and style for carsouel class
+   * @param {Boolean} [options.loop=false] - Activate/Deactivate the loop mode for carousel
+   * @param {Boolean} [options.pagination=true] - Activate/Deactivate the pagination for carousel
+   * @param {Object} [options.style] - Object contain class and style for carousel class
    * @param {Object} [options.(className)] - Object with class key and style value for personalize element
-   * @param {Boolean} [options.autoplay=false] - Activate/Desactivate autoplay mode
-   * @param {Number} [options.autoplayDelay=3000] - The number of ms for the autoplay mode
+   * @param {Boolean} [options.autoplay=false] - Activate/Deactivate autoplay mode
+   * @param {Number} [options.autoplayDelay=3000] - The amount ms for the autoplay mode
    * @param {String} [options.itemWidth=auto] - Width of items in the carousel
    * @param {Number} [options.itemsSpace=0] - Spacing between items
-   * @param {String} [options.carouselWidth="100%"] - Width of carousel
+   * @param {String} [options.carouselWidth="100%"] - Width of carousel.
    */
   constructor(element, styleLink, options = {}) {
     // Setup variables
@@ -100,9 +100,6 @@ class Carousel {
     if (this.options.pagination && !this.isMobile) this.createPagination();
 
     // Events
-    // Wait changes for good index
-    //setTimeout(() => this.gotoItem(this.options.index), 10);
-    //this.onWindowResize();
     this.root.addEventListener("keyup", (e) => {
       if (e.key === "ArrowRight" || e.key === "Right") this.next();
       else if (e.key === "ArrowLeft" || e.key === "Left") this.prev();
@@ -224,24 +221,12 @@ class Carousel {
     let translateX = index * -100 / this.items.length + "%";
     if (this.options.centeredItem) translateX = "calc(" + index * -100 / this.items.length + "%" + " + " + this.options.itemsSpace / this.slidesVisible + "px)";
     if (this.options.centeredItem && this.slidesVisible === 1) translateX = "calc(" + index * -100 / this.items.length + "%" + " - " + this.options.itemsSpace * index + "px)";
-    /* let translateX = this.largest
-      ? this.options.centeredItem
-        ? (this.largest + this.options.itemsSpace) * -index -
-        (this.options.itemsSpace - this.largest / 2) * .5 +
-        "px"
-        : index * (-this.largest - this.options.itemsSpace) + "px"
-      : ((index * -100) / this.items.length) +
-      "%"; */
     this.container.style.transform = `translate3d(calc(${translateX} + ${this.options.itemsSpace * index}px), 0, 0)`;
     this.currentItem = index;
 
     this.moveCallbacks.forEach((cb) => cb(index));
   }
 
-  /**
-   *
-   * @param {Callback} cb
-   */
   onMove(cb) {
     this.moveCallbacks.push(cb);
   }
@@ -262,20 +247,11 @@ class Carousel {
   }
 
   get slidesVisible() {
-    /*setTimeout(() => {
-      if (this.options.itemWidth === "fit-content") {
-        let itemRatio = this.largest / this.element.offsetWidth;
-
-        let i = 1 % itemRatio;
-        let i2 = 1 - i;
-        this.options.slidesVisible = Math.ceil(i2 / itemRatio);
-      }
-    }, 10)*/
     return this.isMobile ? 1 : this.options.slidesVisible;
   }
 
   /**
-   * Create element with attributes
+   * Create an element with attributes
    * @param {String} htmlTag
    * @param {Object} [attributes={}]
    * @returns {HTMLElement}
