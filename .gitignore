@@ -1,6 +1,5 @@
 index2.html
 *.md
-Deprecated/*
-Old-commit/*
-*.vscode
+Deprecated
+Old-commit
 .idea
