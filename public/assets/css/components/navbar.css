@@ -1,6 +1,0 @@
-nav.navbar {
-  position: fixed;
-  top: 1;
-  width: calc(100vw - 40px);
-  padding: 0 20px;
-  height: 7rem; }
